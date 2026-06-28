@@ -41,9 +41,9 @@ class ModelTrainer:
                 "Gradient Boosting":GradientBoostingRegressor(),
                 "Linear Regression": LinearRegression(),
                 "K-Neighbour Classifier":KNeighborsRegressor(),
-                "XGBClassifier":XGBRegressor(),
-                "CatBoosting Classifier":CatBoostRegressor(),
-                "AdaBoost Classifier":AdaBoostRegressor(),
+                 "XGBRegressor": XGBRegressor(),
+                "CatBoosting Regressor": CatBoostRegressor(verbose=False),
+                "AdaBoost Regressor": AdaBoostRegressor(),
             }
             
             
@@ -68,6 +68,7 @@ class ModelTrainer:
                     'n_estimators': [8,16,32,64,128,256]
                 },
                 "Linear Regression":{},
+                "K-Neighbour Classifier": {},
                 "XGBRegressor":{
                     'learning_rate':[.1,.01,.05,.001],
                     'n_estimators': [8,16,32,64,128,256]
@@ -85,7 +86,7 @@ class ModelTrainer:
             }
             
             model_report:dict = evaluate_model(X_train = X_train,Y_train=Y_train,X_test=X_test,
-                                               Y_test=Y_test,models = models,params = params)
+                                               Y_test=Y_test,models = models,param = params)
             
             best_model_score = max(sorted(model_report.values()))
             
@@ -107,8 +108,10 @@ class ModelTrainer:
             
             predicted = best_model.predict(X_test)
             r2_square = r2_score(Y_test,predicted)
+            
             return r2_square
         
          
-        except:
-            pass
+        except Exception as e:
+            raise CustomException(e,sys)
+            
