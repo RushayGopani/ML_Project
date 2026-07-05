@@ -35,5 +35,12 @@ pip install -r requirement.txt
 python app.py
 ```
 
-## Status
-Model training pipeline complete. AWS deployment in progress.
+## AWS Deployment
+
+### Elastic Beanstalk Dashboard
+
+![AWS Dashboard](screenshots/aws-dashboard.png)
+
+### Prediction Result
+
+![Prediction Result](screenshots/prediction-result.png)
