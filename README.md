@@ -35,12 +35,14 @@ pip install -r requirement.txt
 python app.py
 ```
 
-## AWS Deployment
+## ☁️ AWS Deployment
 
-### Elastic Beanstalk Dashboard
+The application was successfully deployed on **AWS Elastic Beanstalk** using **Flask**, **Gunicorn**, and **Scikit-learn**.
 
-![AWS Dashboard](screenshots/aws-dashboard.png)
+### AWS Elastic Beanstalk Dashboard
+
+![AWS Dashboard](ScreenShot%20Result/Dashboard%20SS.png)
 
 ### Prediction Result
 
-![Prediction Result](screenshots/prediction-result.png)
+![Prediction Result](ScreenShot%20Result/Prediction%20SS.png)
